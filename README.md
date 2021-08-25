@@ -1,1 +1,1 @@
-# Enorith: a framework for golang web artisan
+# A framework for golang web artisan
