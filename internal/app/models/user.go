@@ -19,12 +19,11 @@ func (p Password) Value() (driver.Value, error) {
 
 type User struct {
 	content.Request `gorm:"-" json:"-"`
-	ID              int64             `gorm:"column:id;primaryKey" json:"id"`
-	Name            string            `gorm:"column:name" json:"name" input:"name" validate:"required"`
-	Username        string            `gorm:"column:username" json:"username" input:"username" validate:"required"`
-	CreatedAt       database.Datetime `gorm:"column:created_at" json:"created_at"`
-	UpdatedAt       database.Datetime `gorm:"column:updated_at" json:"updated_at"`
-	Password        Password          `gorm:"column:password" json:"-" input:"password"`
+	database.WithTimestamps
+	ID       int64    `gorm:"column:id;primaryKey" json:"id"`
+	Name     string   `gorm:"column:name" json:"name" input:"name" validate:"required"`
+	Username string   `gorm:"column:username;unique" json:"username" input:"username" validate:"required"`
+	Password Password `gorm:"column:password" json:"-" input:"password"`
 }
 
 func (u User) UserIdentifier() authenticate.UserIdentifier {
