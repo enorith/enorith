@@ -15,6 +15,6 @@ func (c Datetime) MarshalJSON() ([]byte, error) {
 }
 
 type WithTimestamps struct {
-	CreatedAt Datetime `gorm:"column:created_at" json:"created_at"`
-	UpdatedAt Datetime `gorm:"column:updated_at" json:"updated_at"`
+	CreatedAt Datetime `gorm:"column:created_at;autoCreateTime;type:timestamp null" json:"created_at"`
+	UpdatedAt Datetime `gorm:"column:updated_at;autoUpdateTime;type:timestamp null" json:"updated_at"`
 }

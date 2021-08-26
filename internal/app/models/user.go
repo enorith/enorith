@@ -6,7 +6,6 @@ import (
 	"github.com/enorith/authenticate"
 	"github.com/enorith/enorith/internal/pkg/database"
 	"github.com/enorith/http/content"
-	"gorm.io/gorm"
 )
 
 type Password []byte
@@ -19,27 +18,13 @@ func (p Password) Value() (driver.Value, error) {
 
 type User struct {
 	content.Request `gorm:"-" json:"-"`
+	ID              int64    `gorm:"column:id;primaryKey;not null;type:int;autoIncrement" json:"id"`
+	Name            string   `gorm:"column:name;type:varchar(255)" json:"name" input:"name" validate:"required"`
+	Username        string   `gorm:"column:username;uniqueIndex:idx_unique_username;type:varchar(128)" json:"username" input:"username" validate:"required"`
+	Password        Password `gorm:"column:password;type:varchar(255)" json:"-" input:"password"`
 	database.WithTimestamps
-	ID       int64    `gorm:"column:id;primaryKey" json:"id"`
-	Name     string   `gorm:"column:name" json:"name" input:"name" validate:"required"`
-	Username string   `gorm:"column:username;unique" json:"username" input:"username" validate:"required"`
-	Password Password `gorm:"column:password" json:"-" input:"password"`
 }
 
 func (u User) UserIdentifier() authenticate.UserIdentifier {
 	return authenticate.Identifier(u.ID)
-}
-
-type UserProvider struct {
-	db *gorm.DB
-}
-
-func (up UserProvider) FindUserById(id authenticate.UserIdentifier) (authenticate.User, error) {
-	var user User
-	e := up.db.Where("id = ?", id.Int64()).Find(&user).Error
-	return user, e
-}
-
-func NewUserProvider(db *gorm.DB) *UserProvider {
-	return &UserProvider{db: db}
 }

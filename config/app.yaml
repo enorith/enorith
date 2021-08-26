@@ -1,2 +1,4 @@
 env: local
 debug: true
+locale: en
+url: http://localhost

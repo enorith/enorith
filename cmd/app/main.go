@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/enorith/enorith/config"
 	"github.com/enorith/enorith/internal/app"
 	"github.com/enorith/enorith/internal/app/routes"
@@ -15,7 +17,11 @@ func main() {
 	application := framework.NewApp(config.FS)
 	app.BootstrapApp(application)
 
-	application.Run(ServeAt, func(rw *router.Wrapper, k *http.Kernel) {
+	e := application.Run(ServeAt, func(rw *router.Wrapper, k *http.Kernel) {
 		routes.WebRoutes(rw)
 	})
+
+	if e != nil {
+		log.Fatal(e)
+	}
 }
