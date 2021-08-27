@@ -1,9 +1,15 @@
 package auth
 
 import (
+	"reflect"
+
 	"github.com/enorith/container"
 	"github.com/enorith/framework"
+	"github.com/enorith/framework/authentication"
+	"github.com/enorith/gormdb"
 	"github.com/enorith/http/contracts"
+	"github.com/enorith/http/errors"
+	"github.com/enorith/language"
 )
 
 type Service struct {
@@ -13,11 +19,16 @@ type Service struct {
 // you can configure service, prepare global vars etc.
 // running at main goroutine
 func (s Service) Register(app *framework.App) error {
-	// tx, e := gormdb.DefaultManager.GetConnection()
-	// if e != nil {
-	// 	return e
-	// }
-	// provider := UserProvider{tx}
+	tx, e := gormdb.DefaultManager.GetConnection()
+	if e != nil {
+		return e
+	}
+	msg, _ := language.T("auth", "failed")
+	AuthFailedError = errors.UnprocessableEntity(msg)
+
+	provider := NewUserProvider(tx)
+
+	authentication.AuthManager.WithProvider("users", provider)
 
 	return nil
 }
@@ -26,5 +37,7 @@ func (s Service) Register(app *framework.App) error {
 // usually register request lifetime instance to IoC-Container (per-request unique)
 // this function will run before every request handling
 func (s Service) Lifetime(ioc container.Interface, request contracts.RequestContract) {
-	panic("not implemented") // TODO: Implement
+	ioc.BindFunc("middleware.auth", func(c container.Interface) (reflect.Value, error) {
+		return c.Instance(Middleware{})
+	}, true)
 }

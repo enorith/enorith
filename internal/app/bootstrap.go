@@ -3,10 +3,12 @@ package app
 import (
 	"log"
 
+	"github.com/enorith/enorith/internal/app/auth"
 	"github.com/enorith/enorith/internal/app/models"
 	"github.com/enorith/enorith/locales"
 	"github.com/enorith/enorith/resources"
 	"github.com/enorith/framework"
+	"github.com/enorith/framework/authentication"
 	"github.com/enorith/framework/cache"
 	"github.com/enorith/framework/database"
 	"github.com/enorith/framework/language"
@@ -18,10 +20,13 @@ import (
 func BootstrapApp(app *framework.App) {
 	database.Migrator = Migration
 
-	app.Register(&database.Service{})
-	app.Register(&cache.Service{})
-	app.Register(&redis.Service{})
+	app.Register(database.Service{})
+	app.Register(cache.Service{})
+	app.Register(redis.Service{})
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
+	app.Register(authentication.NewAuthService())
+	app.Register(auth.Service{})
+
 	view.WithDefault(resources.FS, "html", "views")
 }
 
