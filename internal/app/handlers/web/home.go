@@ -8,6 +8,6 @@ import (
 func Index() (*content.TemplateResponse, error) {
 	return view.View("welcome", 200, map[string]string{
 		"Title": "Enorith",
-		"Desc":  "A framework for golang web artisan",
+		"Desc":  "A golang framework for web artisans.",
 	})
 }
