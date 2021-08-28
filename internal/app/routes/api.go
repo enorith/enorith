@@ -12,6 +12,6 @@ func ApiRoutes(r *router.Wrapper) {
 
 	r.Group(func(r *router.Wrapper) {
 		r.Get("user", apiHandler.User)
-	}, "").Middleware("auth")
+	}).Middleware("auth")
 
 }
