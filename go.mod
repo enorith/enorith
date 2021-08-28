@@ -10,6 +10,6 @@ require (
 	github.com/enorith/http v0.0.11
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
 	github.com/enorith/supports v0.0.12
-	github.com/joho/godotenv v1.3.0 // indirect
+	github.com/joho/godotenv v1.3.0
 	gorm.io/gorm v1.21.14
 )
