@@ -1,1 +1,1 @@
-# A framework for golang web artisan
+# A golang framework for web artisans.
