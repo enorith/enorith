@@ -1,11 +1,7 @@
 package auth
 
 import (
-	"reflect"
-
 	"github.com/enorith/authenticate"
-	"github.com/enorith/container"
-	"github.com/enorith/framework/authentication"
 	"github.com/enorith/http"
 	"github.com/enorith/http/content"
 	"github.com/enorith/http/contracts"
@@ -24,8 +20,5 @@ func (m Middleware) Handle(r contracts.RequestContract, next http.PipeHandler) c
 		msg, _ := language.T("auth", "unauthorized")
 		return content.ErrResponseFromError(errors.Unauthorized(msg), 401, nil)
 	}
-	r.GetContainer().BindFunc(authentication.GuardType, func(c container.Interface) (reflect.Value, error) {
-		return reflect.ValueOf(m.Guard), nil
-	}, true)
 	return next(r)
 }
