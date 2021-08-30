@@ -1,8 +1,6 @@
 package auth
 
 import (
-	"reflect"
-
 	"github.com/enorith/container"
 	"github.com/enorith/framework"
 	"github.com/enorith/framework/authentication"
@@ -37,7 +35,7 @@ func (s Service) Register(app *framework.App) error {
 // usually register request lifetime instance to IoC-Container (per-request unique)
 // this function will run before every request handling
 func (s Service) Lifetime(ioc container.Interface, request contracts.RequestContract) {
-	ioc.BindFunc("middleware.auth", func(c container.Interface) (reflect.Value, error) {
+	ioc.BindFunc("middleware.auth", func(c container.Interface) (interface{}, error) {
 		return c.Instance(Middleware{})
 	}, true)
 }
