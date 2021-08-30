@@ -3,8 +3,9 @@ package app
 import (
 	"log"
 
-	"github.com/enorith/enorith/internal/app/auth"
 	"github.com/enorith/enorith/internal/app/models"
+	"github.com/enorith/enorith/internal/pkg/auth"
+	"github.com/enorith/enorith/internal/pkg/env"
 	"github.com/enorith/enorith/locales"
 	"github.com/enorith/enorith/resources"
 	"github.com/enorith/framework"
@@ -20,6 +21,7 @@ import (
 func BootstrapApp(app *framework.App) {
 	database.Migrator = Migration
 
+	app.Register(env.Service{})
 	app.Register(database.Service{})
 	app.Register(cache.Service{})
 	app.Register(redis.Service{})

@@ -3,14 +3,14 @@ package api
 import (
 	"github.com/enorith/authenticate"
 	"github.com/enorith/authenticate/jwt"
-	"github.com/enorith/enorith/internal/app/auth"
-	"github.com/enorith/http/contracts"
+	"github.com/enorith/enorith/internal/app/requests"
+	"github.com/enorith/enorith/internal/pkg/auth"
 )
 
 type AuthHandler struct {
 }
 
-func (AuthHandler) Login(r contracts.RequestContract, g authenticate.Guard, p auth.UserProvider) (jwt.Token, error) {
+func (AuthHandler) Login(r requests.LoginRequest, g authenticate.Guard, p auth.UserProvider) (jwt.Token, error) {
 
 	u, e := p.Attempt(r)
 	if e != nil {
