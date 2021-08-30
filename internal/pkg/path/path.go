@@ -6,7 +6,7 @@ import (
 )
 
 func BasePath(path ...string) string {
-	base, _ := filepath.Abs(filepath.Base(os.Args[0]))
+	base, _ := os.Getwd()
 	paths := append([]string{base}, path...)
 
 	return filepath.Join(paths...)

@@ -12,6 +12,7 @@ import (
 	"github.com/enorith/framework/authentication"
 	"github.com/enorith/framework/cache"
 	"github.com/enorith/framework/database"
+	"github.com/enorith/framework/http"
 	"github.com/enorith/framework/language"
 	"github.com/enorith/framework/redis"
 	"github.com/enorith/http/view"
@@ -26,6 +27,7 @@ func BootstrapApp(app *framework.App) {
 	app.Register(cache.Service{})
 	app.Register(redis.Service{})
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
+	app.Register(http.Service{})
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})
 

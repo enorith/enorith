@@ -20,8 +20,8 @@ type User struct {
 	content.Request `gorm:"-" json:"-"`
 	ID              int64    `gorm:"column:id;primaryKey;not null;type:int;autoIncrement" json:"id"`
 	Name            string   `gorm:"column:name;type:varchar(255)" json:"name" input:"name" validate:"required"`
-	Username        string   `gorm:"column:username;uniqueIndex:idx_unique_username;type:varchar(128)" json:"username" input:"username" validate:"required"`
-	Password        Password `gorm:"column:password;type:varchar(255)" json:"-" input:"password"`
+	Username        string   `gorm:"column:username;uniqueIndex:idx_unique_username;type:varchar(128)" json:"username" input:"username" validate:"required|unique:users"`
+	Password        Password `gorm:"column:password;type:varchar(255)" json:"-" input:"password" validate:"required"`
 	database.WithTimestamps
 }
 
