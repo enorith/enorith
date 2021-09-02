@@ -22,6 +22,7 @@ type User struct {
 	Name            string   `gorm:"column:name;type:varchar(255)" json:"name" input:"name" validate:"required"`
 	Username        string   `gorm:"column:username;uniqueIndex:idx_unique_username;type:varchar(128)" json:"username" input:"username" validate:"required|unique:users"`
 	Password        Password `gorm:"column:password;type:varchar(255)" json:"-" input:"password" validate:"required"`
+	Email           string   `gorm:"column:email;type:varchar(255) null" json:"email" input:"email"`
 	database.WithTimestamps
 }
 
