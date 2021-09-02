@@ -14,6 +14,7 @@ import (
 	"github.com/enorith/framework/database"
 	"github.com/enorith/framework/http"
 	"github.com/enorith/framework/language"
+	"github.com/enorith/framework/queue"
 	"github.com/enorith/framework/redis"
 	"github.com/enorith/http/view"
 	"gorm.io/gorm"
@@ -23,13 +24,14 @@ func BootstrapApp(app *framework.App) {
 	database.Migrator = Migration
 
 	app.Register(env.Service{})
-	app.Register(database.Service{})
+	app.Register(database.NewService())
 	app.Register(cache.Service{})
 	app.Register(redis.Service{})
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
 	app.Register(http.Service{})
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})
+	app.Register(queue.NewService())
 
 	view.WithDefault(resources.FS, "html", "views")
 }

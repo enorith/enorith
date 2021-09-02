@@ -1,0 +1,18 @@
+listen: true
+connection: mem
+running_workers:
+  - default
+  
+workers:
+  default:
+    connection: mem
+    concurrency: 1
+  nsq:
+    connection: nsq
+    concurrency: 4
+    
+connections:
+  nsq:
+    type: nsq # support: nsq, mem
+    nsqd: 127.0.0.1:49157
+    #nsqlookupd: localhost:4161

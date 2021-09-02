@@ -1,6 +1,8 @@
 package auth
 
 import (
+	"fmt"
+
 	"github.com/enorith/authenticate"
 	"github.com/enorith/enorith/internal/app/models"
 	"github.com/enorith/framework/authentication"
@@ -20,13 +22,13 @@ type UserProvider struct {
 
 func (up *UserProvider) FindUserById(id authenticate.UserIdentifier) (authenticate.User, error) {
 	var user models.User
-	e := up.DB.Where("id = ?", id.Int64()).Find(&user).Error
+	e := up.DB.First(&user, id.Int64()).Error
 	return user, e
 }
 
 func (up *UserProvider) Attempt(r contracts.RequestContract) (authenticate.User, error) {
 	var user models.User
-	e := up.DB.Where("username = ?", r.GetString(UsernameField)).Find(&user).Error
+	e := up.DB.Where(fmt.Sprintf("%s = ?", UsernameField), r.GetString(UsernameField)).Find(&user).Error
 	if e != nil {
 		return nil, e
 	}
