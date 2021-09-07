@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/enorith/enorith/internal/app/models"
+	"github.com/enorith/enorith/internal/app/routes"
 	"github.com/enorith/enorith/internal/pkg/auth"
 	"github.com/enorith/enorith/internal/pkg/env"
 	"github.com/enorith/enorith/locales"
@@ -16,6 +17,8 @@ import (
 	"github.com/enorith/framework/language"
 	"github.com/enorith/framework/queue"
 	"github.com/enorith/framework/redis"
+	h "github.com/enorith/http"
+	"github.com/enorith/http/router"
 	"github.com/enorith/http/view"
 	"gorm.io/gorm"
 )
@@ -28,12 +31,31 @@ func BootstrapApp(app *framework.App) {
 	app.Register(cache.Service{})
 	app.Register(redis.Service{})
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
-	app.Register(http.Service{})
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})
 	app.Register(queue.NewService())
 
+	WithHttp(app)
 	view.WithDefault(resources.FS, "html", "views")
+}
+
+func WithHttp(app *framework.App) {
+	service := http.NewService(func(rw *router.Wrapper, k *h.Kernel) {
+		k.KeepAlive()
+		k.OutputLog = true
+		RegisterRoutes(rw)
+	})
+
+	app.Register(service)
+}
+
+func RegisterRoutes(rw *router.Wrapper) {
+	routes.WebRoutes(rw)
+
+	rw.Group(func(r *router.Wrapper) {
+		routes.ApiRoutes(r)
+	}, "api")
+
 }
 
 func Migration(tx *gorm.DB) {

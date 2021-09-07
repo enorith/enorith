@@ -16,3 +16,5 @@ connections:
     type: nsq # support: nsq, mem
     nsqd: 127.0.0.1:49157
     #nsqlookupd: localhost:4161
+  mem:
+    type: mem
