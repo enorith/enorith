@@ -70,12 +70,12 @@ github.com/enorith/environment v0.0.2 h1:Lk/6cnqK/6zZzxAgFgILaCsoWbVoUiKNPVRKUZx
 github.com/enorith/environment v0.0.2/go.mod h1:dWBMAtvMWPCnqN+xzA7M4IkHn0qMwz8aL13eIm+R/GY=
 github.com/enorith/exception v0.0.2 h1:Z2SMN7zx2UaXKh49wbc2YwgQ8xUcsOQ6J2ecq6q3snA=
 github.com/enorith/exception v0.0.2/go.mod h1:OiHWfkZXqUU7JwAMFRRM6abSwjBZuX0P4kLLxndKTzk=
-github.com/enorith/framework v0.0.7-0.20210906103248-b51bd1a517f6 h1:H7KhUS7Zzs3m66ZQ5ytpPhJsAJ+1HzjhenwNkg3Vay4=
-github.com/enorith/framework v0.0.7-0.20210906103248-b51bd1a517f6/go.mod h1:1Kz1RrE3JN1NsuIzhCD7rT41QGD8jnH0AcczycfnG9c=
+github.com/enorith/framework v0.0.7-0.20210908103029-7f3644b3c393 h1:d9R0NL68HlOLGF8w7T1p20vwPf4d4rxYOym4dSOpGBw=
+github.com/enorith/framework v0.0.7-0.20210908103029-7f3644b3c393/go.mod h1:54uTQ3ZkKUTCbmcm8wLeJYzyzYKfXjgu1JHUUWkhi4M=
 github.com/enorith/gormdb v0.0.0-20210826072414-e6f6875230a7 h1:2nNlpXw6hnx0fHF3guaNXGG0Wg57q58NSvNLmoS6IdA=
 github.com/enorith/gormdb v0.0.0-20210826072414-e6f6875230a7/go.mod h1:7QJXANMqSvqizuX2veUBem06UkkFUuvs0q2QNAE+sIU=
-github.com/enorith/http v0.0.17 h1:EIQEiJwlAYy68j0H3HzB5XK9fFQPw3uXob30VavmVa8=
-github.com/enorith/http v0.0.17/go.mod h1:GJL1mH5PdUxO0Cb01vZ3Zt6l0jPa0tXF6e3KI5DHUWk=
+github.com/enorith/http v0.0.18 h1:zHWs9BMSMFzZBnH35iBIlAAvcavpI79GDl+fYRSKx8s=
+github.com/enorith/http v0.0.18/go.mod h1:GJL1mH5PdUxO0Cb01vZ3Zt6l0jPa0tXF6e3KI5DHUWk=
 github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e h1:Ea3RC9iiBk25Ylnb78eqU3hCZcD3mr0IjyWUbbJNgfU=
 github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e/go.mod h1:lR6+6amExYujU7vx/8JEddpv2xlCf2sUXciyg8JKJ7g=
 github.com/enorith/queue v0.0.3 h1:VasWhaZIxuBxpoMi9DYk78Gipl7Vf2XczGDHyBYX5Rs=
