@@ -23,8 +23,8 @@ import (
 
 func BootstrapApp(app *framework.App) {
 	database.Migrator = Migration
+	env.LoadDotenv()
 
-	app.Register(env.Service{})
 	app.Register(database.NewService())
 	app.Register(cache.Service{})
 	app.Register(redis.Service{})

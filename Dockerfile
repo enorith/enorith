@@ -21,6 +21,6 @@ WORKDIR /app
 COPY --from=build_base /build/enorith /app/enorith
 RUN chmod +x /app/enorith
 
-EXPOSE 3113
+EXPOSE 8000
 
 CMD ["/app/enorith"]
