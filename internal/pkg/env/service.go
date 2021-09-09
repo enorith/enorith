@@ -9,6 +9,6 @@ import (
 
 func LoadDotenv() {
 	file := path.BasePath(".env")
-	log.Printf("loading dotenv files %s", file)
+	log.Printf("loading dotenv file %s", file)
 	_ = godotenv.Load(file)
 }
