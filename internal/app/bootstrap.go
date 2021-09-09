@@ -4,10 +4,9 @@ import (
 	"log"
 
 	"github.com/enorith/enorith/internal/app/models"
-	"github.com/enorith/enorith/internal/app/routes"
+	"github.com/enorith/enorith/internal/app/services"
 	"github.com/enorith/enorith/internal/pkg/auth"
 	"github.com/enorith/enorith/internal/pkg/env"
-	"github.com/enorith/enorith/internal/pkg/services"
 	"github.com/enorith/enorith/locales"
 	"github.com/enorith/enorith/resources"
 	"github.com/enorith/framework"
@@ -18,7 +17,6 @@ import (
 	"github.com/enorith/framework/language"
 	"github.com/enorith/framework/queue"
 	"github.com/enorith/framework/redis"
-	"github.com/enorith/http/router"
 	"github.com/enorith/http/view"
 	"gorm.io/gorm"
 )
@@ -43,16 +41,6 @@ func WithHttp(app *framework.App) {
 	service := http.NewService()
 	app.Register(services.HttpService{})
 	app.Register(service)
-}
-
-func RegisterRoutes(rw *router.Wrapper) {
-	// web routes
-	routes.WebRoutes(rw)
-
-	rw.Group(func(r *router.Wrapper) {
-		routes.ApiRoutes(r)
-	}, "api")
-
 }
 
 func Migration(tx *gorm.DB) {
