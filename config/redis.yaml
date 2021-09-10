@@ -1,2 +1,2 @@
-hosts: 127.0.0.1:6379
-database: 1
+hosts: 127.0.0.1:6379 # env: REDIS_HOSTS
+database: 1 #env: REDIS_DB
