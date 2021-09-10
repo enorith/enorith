@@ -6,15 +6,16 @@ running_workers:
 workers:
   default:
     connection: mem
-    concurrency: 1
+    concurrency: 4
   nsq:
     connection: nsq
     concurrency: 4
-    
+
 connections:
   nsq:
-    type: nsq # support: nsq, mem
-    nsqd: 127.0.0.1:49157
-    #nsqlookupd: localhost:4161
+    driver: nsq # support: nsq, mem
+    config:
+      nsqd: 127.0.0.1:49157 # env: QUEUE_NSQD
+      #nsqlookupd: localhost:4161 # env: QUEUE_NSQLOOKUPD
   mem:
-    type: mem
+    driver: mem
