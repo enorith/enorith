@@ -18,9 +18,10 @@ RUN apk add ca-certificates
 
 WORKDIR /app
 
-COPY --from=build_base /build/enorith /app/enorith
-RUN chmod +x /app/enorith
+COPY config config
+COPY --from=build_base /build/enorith enorith
+RUN chmod +x enorith
 
 EXPOSE 8000
 
-CMD ["/app/enorith"]
+CMD ["./enorith"]
