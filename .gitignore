@@ -5,3 +5,4 @@ tmp
 .env
 .air.toml
 *.log
+build
