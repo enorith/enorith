@@ -26,8 +26,9 @@ func BootstrapApp(app *framework.App) {
 	env.LoadDotenv()
 
 	app.Register(database.NewService())
-	app.Register(cache.Service{})
 	app.Register(redis.Service{})
+
+	app.Register(cache.Service{})
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})

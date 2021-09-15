@@ -1,2 +1,9 @@
-driver: go_cache
-prefix: enorith_
+store: redis #env: CACHE_STORE
+prefix: EF_ #env: CACHE_PREFIX
+stores:
+  go_cache:
+    driver: go_cache
+  redis:
+    driver: redis #support: redis, go_cache
+    config:
+      connection: cache

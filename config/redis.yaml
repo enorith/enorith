@@ -1,6 +1,10 @@
-default: default #Env: REDIS_CONNECTION
+default: default
 connections:
   default:
     addrs:
       - 127.0.0.1:6379
-    database: 1  #Env: REDIS_DB
+    database: 0
+  cache:
+    addrs:
+      - 127.0.0.1:6379
+    database: 1
