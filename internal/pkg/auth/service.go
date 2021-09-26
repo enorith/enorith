@@ -5,7 +5,6 @@ import (
 	"github.com/enorith/framework"
 	"github.com/enorith/framework/authentication"
 	"github.com/enorith/gormdb"
-	"github.com/enorith/http/contracts"
 	"github.com/enorith/http/errors"
 	"github.com/enorith/language"
 )
@@ -28,14 +27,11 @@ func (s Service) Register(app *framework.App) error {
 
 	authentication.AuthManager.WithProvider("users", provider)
 
-	return nil
-}
+	app.Bind(func(ioc container.Interface) {
+		ioc.BindFunc("middleware.auth", func(c container.Interface) (interface{}, error) {
+			return c.Instance(Middleware{})
+		}, true)
+	})
 
-//Lifetime container callback
-// usually register request lifetime instance to IoC-Container (per-request unique)
-// this function will run before every request handling
-func (s Service) Lifetime(ioc container.Interface, request contracts.RequestContract) {
-	ioc.BindFunc("middleware.auth", func(c container.Interface) (interface{}, error) {
-		return c.Instance(Middleware{})
-	}, true)
+	return nil
 }
