@@ -5,6 +5,7 @@ import (
 	"github.com/enorith/enorith/internal/app/routes"
 	"github.com/enorith/framework"
 	"github.com/enorith/framework/http/middleware"
+	"github.com/enorith/http"
 	"github.com/enorith/http/router"
 )
 
@@ -17,8 +18,10 @@ type HttpService struct {
 func (hs HttpService) Register(app *framework.App) error {
 
 	app.Bind(func(ioc container.Interface) {
-		ioc.BindFunc("middleware.throttle.api", func(c container.Interface) (interface{}, error) {
-			return middleware.Throttle(1, 60), nil
+		ioc.BindFunc("middleware.api", func(c container.Interface) (interface{}, error) {
+			return http.MiddlewareChain(
+				middleware.Throttle(1, 60),
+			), nil
 		}, false)
 	})
 
@@ -32,5 +35,5 @@ func (hs HttpService) RegisterRoutes(rw *router.Wrapper) {
 	// register api routes
 	rw.Group(func(r *router.Wrapper) {
 		routes.ApiRoutes(r)
-	}, "api").Middleware("throttle.api")
+	}, "api").Middleware("api")
 }
