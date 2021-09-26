@@ -15,7 +15,6 @@ connections:
   nsq:
     driver: nsq # support: nsq, mem
     config:
-      nsqd: 127.0.0.1:49157 # env: QUEUE_NSQD
-      #nsqlookupd: localhost:4161 # env: QUEUE_NSQLOOKUPD
+      nsqd: localhost:4150 # env: QUEUE_NSQD
   mem:
     driver: mem

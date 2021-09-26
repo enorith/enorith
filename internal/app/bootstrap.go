@@ -33,15 +33,15 @@ func BootstrapApp(app *framework.App) {
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})
 	app.Register(queue.NewService())
-	WithHttp(app)
 
-	view.WithDefault(resources.FS, "html", "views")
+	WithHttp(app)
 }
 
 func WithHttp(app *framework.App) {
 	service := http.NewService()
 	app.Register(services.HttpService{})
 	app.Register(service)
+	view.WithDefault(resources.FS, "html", "views")
 }
 
 func Migration(tx *gorm.DB) {
