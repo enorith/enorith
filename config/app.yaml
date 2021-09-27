@@ -2,4 +2,4 @@ env: local
 debug: true
 locale: en
 url: http://localhost
-port: 8000
+key: somerandomkey!!! #aes encryption key either 16, 24, or 32 bytes to select

@@ -5,7 +5,7 @@ import (
 	"github.com/enorith/enorith/internal/app/routes"
 	"github.com/enorith/framework"
 	"github.com/enorith/framework/http/middleware"
-	"github.com/enorith/http"
+	"github.com/enorith/http/pipeline"
 	"github.com/enorith/http/router"
 )
 
@@ -19,7 +19,7 @@ func (hs HttpService) Register(app *framework.App) error {
 
 	app.Bind(func(ioc container.Interface) {
 		ioc.BindFunc("middleware.api", func(c container.Interface) (interface{}, error) {
-			return http.MiddlewareChain(
+			return pipeline.MiddlewareChain(
 				middleware.Throttle(1, 60),
 			), nil
 		}, false)

@@ -2,10 +2,10 @@ package auth
 
 import (
 	"github.com/enorith/authenticate"
-	"github.com/enorith/http"
 	"github.com/enorith/http/content"
 	"github.com/enorith/http/contracts"
 	"github.com/enorith/http/errors"
+	"github.com/enorith/http/pipeline"
 	"github.com/enorith/language"
 )
 
@@ -13,7 +13,7 @@ type Middleware struct {
 	authenticate.Guard
 }
 
-func (m Middleware) Handle(r contracts.RequestContract, next http.PipeHandler) contracts.ResponseContract {
+func (m Middleware) Handle(r contracts.RequestContract, next pipeline.PipeHandler) contracts.ResponseContract {
 
 	_, e := m.Check()
 	if e != nil {
