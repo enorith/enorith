@@ -21,6 +21,20 @@
             color: #cecece;
             font-weight: 100;
         }
+
+        @media (prefers-color-scheme: dark) {
+            .title {
+                color: rgb(196, 196, 196);
+            }
+
+            .desc {
+                color: #ddd;
+            }
+
+            body {
+                background-color: rgb(26, 32, 44);
+            }
+        }
     </style>
 </head>
 
@@ -28,4 +42,5 @@
     <div class="title">{{.Title}}</div>
     <div class="desc">{{.Desc}}</div>
 </body>
+
 </html>

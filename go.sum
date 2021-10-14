@@ -68,8 +68,8 @@ github.com/enorith/environment v0.0.2 h1:Lk/6cnqK/6zZzxAgFgILaCsoWbVoUiKNPVRKUZx
 github.com/enorith/environment v0.0.2/go.mod h1:dWBMAtvMWPCnqN+xzA7M4IkHn0qMwz8aL13eIm+R/GY=
 github.com/enorith/exception v0.0.2 h1:Z2SMN7zx2UaXKh49wbc2YwgQ8xUcsOQ6J2ecq6q3snA=
 github.com/enorith/exception v0.0.2/go.mod h1:OiHWfkZXqUU7JwAMFRRM6abSwjBZuX0P4kLLxndKTzk=
-github.com/enorith/framework v0.0.8-0.20211012070549-c9a28ed29da6 h1:4/B6bANwsgpdp5QJrmx+jV6TKykeOZTinMXeMANQpSk=
-github.com/enorith/framework v0.0.8-0.20211012070549-c9a28ed29da6/go.mod h1:7+dE5FP5n9ILAsz/ih7II6OsPtUTjK4NPVBEPznVGNw=
+github.com/enorith/framework v0.0.8-0.20211014070631-6e8b3d8946f4 h1:38HY6LX3t4Sw52BJ2J8OUkJ2vWvUqYSn9QEViA/L4pU=
+github.com/enorith/framework v0.0.8-0.20211014070631-6e8b3d8946f4/go.mod h1:7+dE5FP5n9ILAsz/ih7II6OsPtUTjK4NPVBEPznVGNw=
 github.com/enorith/gormdb v0.0.0-20210826072414-e6f6875230a7 h1:2nNlpXw6hnx0fHF3guaNXGG0Wg57q58NSvNLmoS6IdA=
 github.com/enorith/gormdb v0.0.0-20210826072414-e6f6875230a7/go.mod h1:7QJXANMqSvqizuX2veUBem06UkkFUuvs0q2QNAE+sIU=
 github.com/enorith/http v1.0.0 h1:jr781J53yxVj7P6XYr8mORDTcWS0+MepTSJ2kJfH7Ag=
@@ -88,7 +88,6 @@ github.com/envoyproxy/go-control-plane v0.6.9/go.mod h1:SBwIajubJHhxtWwsL9s8ss4s
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
-
 github.com/franela/goblin v0.0.0-20200105215937-c9ffbefa60db/go.mod h1:7dvUGVsVBjqR7JHJk0brhHOZYGmfBYOrK0ZhYMEtBr4=
 github.com/franela/goreq v0.0.0-20171204163338-bcd34c9993f8/go.mod h1:ZhphrRTfi2rbfLwlschooIH4+wKKDR4Pdxhh+TRoA20=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
