@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/enorith/enorith/internal/app"
+	"github.com/enorith/enorith/internal/pkg/env"
 	"github.com/enorith/enorith/internal/pkg/path"
 	"github.com/enorith/framework"
 )
@@ -12,6 +13,8 @@ import (
 const ServeAt = ":3113"
 
 func main() {
+	// load .env, before app created
+	env.LoadDotenv()
 	application := framework.NewApp(os.DirFS(path.BasePath("config")))
 	app.BootstrapApp(application)
 
