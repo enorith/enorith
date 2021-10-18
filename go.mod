@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/enorith/authenticate v0.0.1
 	github.com/enorith/container v0.0.18
-	github.com/enorith/framework v0.0.8-0.20211018095957-cfb401de7909
+	github.com/enorith/framework v0.0.8-0.20211018102720-82e826652295
 	github.com/enorith/gormdb v0.0.0-20210826072414-e6f6875230a7
 	github.com/enorith/http v1.0.2
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e

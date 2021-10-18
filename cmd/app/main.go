@@ -15,7 +15,7 @@ const ServeAt = ":3113"
 func main() {
 	// load .env, before app created
 	env.LoadDotenv()
-	application := framework.NewApp(os.DirFS(path.BasePath("config")))
+	application := framework.NewApp(os.DirFS(path.BasePath("config")), path.BasePath("storage/logs"))
 	app.BootstrapApp(application)
 
 	e := application.Run()
