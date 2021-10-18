@@ -1,0 +1,11 @@
+default: default
+channels: 
+  default:
+    outputs:
+      - rotate:///runtime.log # schema supports: rotate, single, file, stdout, stderr
+  single:
+    outputs:
+      - single:///runtime.log
+  http:
+    outputs:
+      - rotate:///http.log

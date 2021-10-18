@@ -1,2 +1,4 @@
 port: 8000
-access_log: false
+access_log: true
+error_log_channel: http
+access_log_channel: http
