@@ -10,8 +10,6 @@ import (
 	"github.com/enorith/framework"
 )
 
-const ServeAt = ":3113"
-
 func main() {
 	// load .env, before app created
 	env.LoadDotenv()
