@@ -3,3 +3,4 @@ connections:
   mysql:
     driver: mysql
     dsn: root:root@tcp(127.0.0.1:3306)/enorith
+log_channel: database
