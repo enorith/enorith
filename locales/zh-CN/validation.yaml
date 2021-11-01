@@ -1,0 +1,4 @@
+required: 请填写:attribute
+unique: :attribute重复
+attributes.username: 用户名
+attributes.password: 密码
