@@ -6,7 +6,6 @@ import (
 	"github.com/enorith/enorith/internal/app/models"
 	"github.com/enorith/enorith/internal/app/services"
 	"github.com/enorith/enorith/internal/pkg/auth"
-	"github.com/enorith/enorith/internal/pkg/schedule"
 	"github.com/enorith/enorith/locales"
 	"github.com/enorith/enorith/resources"
 	"github.com/enorith/framework"
@@ -33,13 +32,21 @@ func BootstrapApp(app *framework.App) {
 	app.Register(language.NewService(locales.FS, app.GetConfig().Locale))
 	app.Register(authentication.NewAuthService())
 	app.Register(auth.Service{})
-	app.Register(queue.NewService())
-	app.Register(crond.Service{})
 
-	// cron tasks
-	app.Register(schedule.Service{})
-
+	WithQueue(app)
+	WithSchedule(app)
 	WithHttp(app)
+}
+
+func WithQueue(app *framework.App) {
+	app.Register(queue.NewService())
+	app.Register(services.QueueService{})
+}
+
+func WithSchedule(app *framework.App) {
+	app.Register(crond.Service{})
+	// cron tasks
+	app.Register(services.ScheduleService{})
 }
 
 func WithHttp(app *framework.App) {
