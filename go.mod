@@ -5,11 +5,11 @@ go 1.18
 require (
 	github.com/enorith/authenticate v0.0.1
 	github.com/enorith/container v0.0.18
-	github.com/enorith/framework v0.1.1-0.20220425081440-6bb0b5e61aee
+	github.com/enorith/framework v0.1.2-0.20220517085754-7ffc553418c8
 	github.com/enorith/gormdb v0.1.0
-	github.com/enorith/http v1.1.0
+	github.com/enorith/http v1.1.6
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
-	github.com/enorith/supports v0.1.2
+	github.com/enorith/supports v0.1.6
 	github.com/go-co-op/gocron v1.11.0
 	github.com/joho/godotenv v1.3.0
 	gorm.io/gorm v1.23.4
@@ -20,11 +20,11 @@ require (
 	github.com/buger/jsonparser v1.1.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
-	github.com/enorith/cache v0.0.5 // indirect
+	github.com/enorith/cache v0.0.8 // indirect
 	github.com/enorith/config v0.0.3 // indirect
 	github.com/enorith/environment v0.0.2 // indirect
 	github.com/enorith/exception v0.0.2 // indirect
-	github.com/enorith/logging v0.0.5 // indirect
+	github.com/enorith/logging v0.0.7 // indirect
 	github.com/enorith/queue v0.0.5 // indirect
 	github.com/enorith/redis v1.0.0 // indirect
 	github.com/go-errors/errors v1.4.1 // indirect
@@ -45,7 +45,7 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.34.0 // indirect
 	github.com/vmihailenco/go-tinylfu v0.2.1 // indirect
-	github.com/vmihailenco/msgpack/v5 v5.3.4 // indirect
+	github.com/vmihailenco/msgpack/v5 v5.3.5 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
