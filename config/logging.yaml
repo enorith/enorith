@@ -3,15 +3,15 @@ channels:
   default:
     outputs:
       - rotate:///runtime.log # schema supports: rotate, single, file, stdout, stderr
+      - stdout
   single:
     outputs:
       - single:///runtime.log
   http:
     outputs:
       - rotate:///http.log
-  http_error:
-    outputs:
-      - rotate:///http.error.log
+      - stdout
+    label: http
   database:
     outputs:
       - rotate:///database.log

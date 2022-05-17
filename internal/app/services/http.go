@@ -30,7 +30,9 @@ func (hs HttpService) Register(app *framework.App) error {
 
 func (hs HttpService) RegisterRoutes(rw *router.Wrapper) {
 	// register web routes
-	routes.WebRoutes(rw)
+	rw.Group(func(r *router.Wrapper) {
+		routes.WebRoutes(r)
+	}).Middleware("session")
 
 	// register api routes
 	rw.Group(func(r *router.Wrapper) {

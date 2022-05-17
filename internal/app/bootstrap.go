@@ -6,6 +6,7 @@ import (
 	"github.com/enorith/enorith/internal/app/models"
 	"github.com/enorith/enorith/internal/app/services"
 	"github.com/enorith/enorith/internal/pkg/auth"
+	"github.com/enorith/enorith/internal/pkg/path"
 	"github.com/enorith/enorith/resources"
 	"github.com/enorith/framework"
 	"github.com/enorith/framework/authentication"
@@ -13,6 +14,7 @@ import (
 	"github.com/enorith/framework/crond"
 	"github.com/enorith/framework/database"
 	"github.com/enorith/framework/http"
+	"github.com/enorith/framework/http/session"
 	"github.com/enorith/framework/language"
 	"github.com/enorith/framework/queue"
 	"github.com/enorith/framework/redis"
@@ -53,6 +55,7 @@ func WithHttp(app *framework.App) {
 	service := http.NewService()
 	app.Register(services.HttpService{})
 	app.Register(service)
+	app.Register(session.NewService(path.BasePath("storage", "sessions")))
 	view.WithDefault(resources.FS, "html", "views")
 }
 

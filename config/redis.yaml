@@ -8,3 +8,7 @@ connections:
     addrs:
       - 127.0.0.1:6379
     database: 1
+  session:
+    addrs:
+      - 127.0.0.1:6379
+    database: 2

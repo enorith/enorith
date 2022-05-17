@@ -27,6 +27,7 @@ require (
 	github.com/enorith/logging v0.0.7 // indirect
 	github.com/enorith/queue v0.0.5 // indirect
 	github.com/enorith/redis v1.0.0 // indirect
+	github.com/enorith/session v0.0.5 // indirect
 	github.com/go-errors/errors v1.4.1 // indirect
 	github.com/go-redis/cache/v8 v8.4.2 // indirect
 	github.com/go-redis/redis/v8 v8.11.3 // indirect

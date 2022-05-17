@@ -1,5 +1,5 @@
 store: redis #env: CACHE_STORE
-prefix: EF_ #env: CACHE_PREFIX
+prefix: 'enorith:'
 stores:
   go_cache:
     driver: go_cache
@@ -7,3 +7,8 @@ stores:
     driver: redis #support: redis, go_cache
     config:
       connection: cache
+  session:
+    driver: redis
+    config:
+      connection: session
+    prefix: 'session:'
