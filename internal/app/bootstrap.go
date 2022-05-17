@@ -55,7 +55,7 @@ func WithHttp(app *framework.App) {
 	service := http.NewService()
 	app.Register(services.HttpService{})
 	app.Register(service)
-	app.Register(session.NewService(path.BasePath("storage", "sessions")))
+	app.Register(session.NewService(path.BasePath("storage")))
 	view.WithDefault(resources.FS, "html", "views")
 }
 
