@@ -1,6 +1,5 @@
-env: local
-debug: true
-locale: en
-url: http://localhost
-key: somerandomkey!!! #aes encryption key either 16, 24, or 32 bytes to select
-timezone: UTC
+env: test # env: APP_ENV
+debug: true # env: APP_DEBUG
+locale: en # env: APP_LOCALE
+key: somerandomkey!!! #aes encryption key either 16, 24, or 32 bytes to select, env: APP_KEY
+timezone: UTC # env: APP_TIMEZONE

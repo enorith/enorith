@@ -5,9 +5,9 @@ go 1.18
 require (
 	github.com/enorith/authenticate v0.0.1
 	github.com/enorith/container v0.0.18
-	github.com/enorith/framework v0.1.2-0.20220517085754-7ffc553418c8
+	github.com/enorith/framework v0.1.2-0.20220518092340-5311dc5b3448
 	github.com/enorith/gormdb v0.1.0
-	github.com/enorith/http v1.1.6
+	github.com/enorith/http v1.1.8
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
 	github.com/enorith/supports v0.1.6
 	github.com/go-co-op/gocron v1.11.0

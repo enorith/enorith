@@ -1,8 +1,9 @@
-port: 8000
-access_log: false
+port: 8000 # env:HTTP_PORT
+access_log: false # env:HTTP_ACCESS_LOG
 error_log_channel: http
 access_log_channel: http
 trusted_proxies:
   - 127.0.0.1
 trusted_proxy_headers:
   - X-Forwarded-For
+enable_cors: true # env:HTTP_ENABLE_CORS

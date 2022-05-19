@@ -1,6 +1,6 @@
-default: cache # session driver, supports: file, cache
-cookie_name: enorith-session
+default: cache # session driver, supports: file, cache, env: SESSION_HANDLER
 cache_store: session
+cookie_name: enorith-session #env: COOKIE_NAME
 dir: sessions
 max_life_time: 3600 # in second
 domain: ''

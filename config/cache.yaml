@@ -1,5 +1,5 @@
 store: redis #env: CACHE_STORE
-prefix: 'enorith:'
+prefix: 'enorith:' #env: CACHE_PREFIX
 stores:
   go_cache:
     driver: go_cache

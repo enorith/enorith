@@ -1,9 +1,12 @@
-default: mysql
+default: mysql # env: DB_CONNECTION
 connections:
   mysql:
     driver: mysql
-    dsn: root:root@tcp(127.0.0.1:3306)/enorith
+    dsn: root:root@tcp(127.0.0.1:3306)/enorith #env: DB_DSN
+  oracle:
+    driver: oracle
+    dsn: oracle://username:password@host:port/db
 implicit_injection: true
 # migrate table
-migrate: false
+migrate: true
 log_channel: database

@@ -1,4 +1,4 @@
-default: default
+default: default # env: LOGGING_CHANNEL
 channels: 
   default:
     outputs:

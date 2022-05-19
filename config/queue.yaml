@@ -1,5 +1,5 @@
-listen: true
-connection: mem
+listen: true #env: QUEUE_LISTEN
+connection: mem #env: QUEUE_CONNECTION
 running_workers:
   - default
   
@@ -10,11 +10,12 @@ workers:
   nsq:
     connection: nsq
     concurrency: 4
-
+    
 connections:
   nsq:
     driver: nsq # support: nsq, mem
     config:
-      nsqd: localhost:4150 # env: QUEUE_NSQD
+      nsqd: localhost:4150
+      #nsqlookupd: localhost:4161
   mem:
     driver: mem
