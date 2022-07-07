@@ -12,3 +12,7 @@ connections:
     addrs:
       - 127.0.0.1:6379
     database: 2
+  queue:
+    addrs:
+      - 127.0.0.1:6379
+    database: 3

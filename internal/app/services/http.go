@@ -1,6 +1,9 @@
 package services
 
 import (
+	"strings"
+
+	"github.com/alexeyco/simpletable"
 	"github.com/enorith/container"
 	"github.com/enorith/enorith/internal/app/routes"
 	"github.com/enorith/framework"
@@ -38,4 +41,28 @@ func (hs HttpService) RegisterRoutes(rw *router.Wrapper) {
 	rw.Group(func(r *router.Wrapper) {
 		routes.ApiRoutes(r)
 	}, "api").Middleware("api")
+
+	printRoutes(rw)
+}
+
+func printRoutes(rw *router.Wrapper) {
+	table := simpletable.New()
+	table.Header = &simpletable.Header{
+		Cells: []*simpletable.Cell{
+			{Align: simpletable.AlignCenter, Text: "Method"},
+			{Align: simpletable.AlignCenter, Text: "Path"},
+			{Align: simpletable.AlignCenter, Text: "Middleware"},
+		},
+	}
+	for k, v := range rw.Routes() {
+		for _, pr := range v {
+			table.Body.Cells = append(table.Body.Cells, []*simpletable.Cell{
+				{Align: simpletable.AlignLeft, Text: k},
+				{Align: simpletable.AlignLeft, Text: pr.Path()},
+				{Align: simpletable.AlignLeft, Text: strings.Join(pr.Middleware(), ",")},
+			})
+		}
+	}
+	table.SetStyle(simpletable.StyleUnicode)
+	table.Println()
 }

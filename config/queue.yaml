@@ -10,12 +10,20 @@ workers:
   nsq:
     connection: nsq
     concurrency: 4
+  redis:
+    connection: redis
+    concurrency: 4  
     
 connections:
   nsq:
-    driver: nsq # support: nsq, mem
+    driver: nsq # support: nsq, mem, redis
     config:
       nsqd: localhost:4150
       #nsqlookupd: localhost:4161
   mem:
     driver: mem
+  redis:
+    driver: redis
+    config:
+      connection: queue
+      queue: enorith:queue
