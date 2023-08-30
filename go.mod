@@ -6,8 +6,8 @@ require (
 	github.com/alexeyco/simpletable v1.0.0
 	github.com/enorith/authenticate v0.0.1
 	github.com/enorith/container v0.0.18
-	github.com/enorith/framework v0.1.2-0.20220707022815-d195bd42ef10
-	github.com/enorith/gormdb v0.1.0
+	github.com/enorith/framework v0.1.4
+	github.com/enorith/gormdb v0.1.1
 	github.com/enorith/http v1.1.11
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
 	github.com/enorith/supports v0.1.7
@@ -25,10 +25,10 @@ require (
 	github.com/enorith/config v0.0.3 // indirect
 	github.com/enorith/environment v0.0.2 // indirect
 	github.com/enorith/exception v0.0.2 // indirect
-	github.com/enorith/logging v0.0.7 // indirect
+	github.com/enorith/logging v0.0.8 // indirect
 	github.com/enorith/queue v0.0.9 // indirect
 	github.com/enorith/redis v1.0.0 // indirect
-	github.com/enorith/session v0.0.5 // indirect
+	github.com/enorith/session v0.0.7 // indirect
 	github.com/go-errors/errors v1.4.1 // indirect
 	github.com/go-redis/cache/v8 v8.4.2 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
