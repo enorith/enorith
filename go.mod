@@ -5,8 +5,8 @@ go 1.18
 require (
 	github.com/alexeyco/simpletable v1.0.0
 	github.com/enorith/authenticate v0.0.1
-	github.com/enorith/container v0.0.18
-	github.com/enorith/framework v0.1.4
+	github.com/enorith/container v0.1.0
+	github.com/enorith/framework v0.1.5
 	github.com/enorith/gormdb v0.1.1
 	github.com/enorith/http v1.1.11
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
