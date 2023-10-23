@@ -75,8 +75,8 @@ github.com/enorith/environment v0.0.2 h1:Lk/6cnqK/6zZzxAgFgILaCsoWbVoUiKNPVRKUZx
 github.com/enorith/environment v0.0.2/go.mod h1:dWBMAtvMWPCnqN+xzA7M4IkHn0qMwz8aL13eIm+R/GY=
 github.com/enorith/exception v0.0.2 h1:Z2SMN7zx2UaXKh49wbc2YwgQ8xUcsOQ6J2ecq6q3snA=
 github.com/enorith/exception v0.0.2/go.mod h1:OiHWfkZXqUU7JwAMFRRM6abSwjBZuX0P4kLLxndKTzk=
-github.com/enorith/framework v0.1.5 h1:JSl6S5Rt2TdKAFenSM2qI2cYrzLIXqcJR41FNXsMs10=
-github.com/enorith/framework v0.1.5/go.mod h1:UastcuEsg5k5OkG06AcOo7dUoVaq2nfOXHEFsvBLIFo=
+github.com/enorith/framework v0.1.6-0.20231022135729-6a6a2f04a69c h1:ejT8ePMK9hKUOC4pNFK/uajYrRV9l9cN/7hYK7MnuhI=
+github.com/enorith/framework v0.1.6-0.20231022135729-6a6a2f04a69c/go.mod h1:9kdCu0OUednB+Jk6j2kuaFBpXkGfRIr6KfFjuTAWy4o=
 github.com/enorith/gormdb v0.1.1 h1:F36RDNqA0JE8r/tR3bAnjvmaehlE4z3nZ0hhZWZbvyw=
 github.com/enorith/gormdb v0.1.1/go.mod h1:7QJXANMqSvqizuX2veUBem06UkkFUuvs0q2QNAE+sIU=
 github.com/enorith/http v1.1.11 h1:ei850FH4lXCqHgm8S7EOhb+o33uXqBxJkko8eKucV6Y=
