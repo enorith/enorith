@@ -6,9 +6,9 @@ require (
 	github.com/alexeyco/simpletable v1.0.0
 	github.com/enorith/authenticate v0.0.2
 	github.com/enorith/container v0.1.0
-	github.com/enorith/framework v0.1.6
+	github.com/enorith/framework v0.1.8
 	github.com/enorith/gormdb v0.1.1
-	github.com/enorith/http v1.1.11
+	github.com/enorith/http v1.1.14
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
 	github.com/enorith/supports v0.1.7
 	github.com/go-co-op/gocron v1.11.0
