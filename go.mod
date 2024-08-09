@@ -6,13 +6,15 @@ require (
 	github.com/alexeyco/simpletable v1.0.0
 	github.com/enorith/authenticate v0.0.2
 	github.com/enorith/container v0.1.0
-	github.com/enorith/framework v0.1.12
+	github.com/enorith/framework v0.1.17-0.20240428072556-bb7b0b49ffe7
 	github.com/enorith/gormdb v0.1.1
 	github.com/enorith/http v1.1.14
 	github.com/enorith/language v0.0.0-20210311034453-b97f7834a24e
 	github.com/enorith/supports v0.1.7
 	github.com/go-co-op/gocron v1.11.0
+	github.com/icza/backscanner v0.0.0-20240328210400-b40c3a86dec5
 	github.com/joho/godotenv v1.3.0
+	github.com/json-iterator/go v1.1.12
 	gorm.io/gorm v1.23.4
 )
 
@@ -20,8 +22,9 @@ require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
-	github.com/enorith/cache v0.0.9 // indirect
+	github.com/enorith/cache v0.0.10 // indirect
 	github.com/enorith/config v0.0.3 // indirect
 	github.com/enorith/environment v0.0.2 // indirect
 	github.com/enorith/exception v0.0.2 // indirect
@@ -37,7 +40,6 @@ require (
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
-	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.15.0 // indirect
 	github.com/mattn/go-runewidth v0.0.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -46,6 +48,8 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/rivo/uniseg v0.1.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	github.com/urfave/cli v1.22.15 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.34.0 // indirect
 	github.com/vmihailenco/go-tinylfu v0.2.1 // indirect
@@ -57,6 +61,6 @@ require (
 	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
 	golang.org/x/exp v0.0.0-20220414153411-bcd21879b8fd // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.3.3 // indirect
 )

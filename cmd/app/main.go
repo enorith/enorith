@@ -13,8 +13,9 @@ import (
 func main() {
 	// load .env, before app created
 	env.LoadDotenv()
-	application := framework.NewApp(os.DirFS(path.BasePath("config")), path.BasePath("storage/logs"))
-	app.BootstrapApp(application)
+	logDir := path.BasePath("storage/logs")
+	application := framework.NewApp(os.DirFS(path.BasePath("config")), logDir)
+	app.BootstrapApp(application, logDir)
 
 	e := application.Run()
 	if e != nil {

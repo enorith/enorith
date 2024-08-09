@@ -6,10 +6,8 @@ import (
 	"sync"
 
 	"github.com/enorith/http/contracts"
-	"github.com/enorith/supports/collection"
 	jsoniter "github.com/json-iterator/go"
 	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
 )
 
 type OpFunc func(db *gorm.DB, col string, val interface{}) *gorm.DB
@@ -90,35 +88,29 @@ func Exists(tx *gorm.DB) (exists bool) {
 	return
 }
 
-type UpsertOpt func(clause.OnConflict) clause.OnConflict
-
-func UpsertOptColumns(cols ...string) UpsertOpt {
-	return func(on clause.OnConflict) clause.OnConflict {
-		on.Columns = collection.Map(cols, func(col string) clause.Column {
-			return clause.Column{Name: col}
-		})
-		return on
+func WithSorts(db *gorm.DB, req contracts.RequestContract, key ...string) *gorm.DB {
+	k := "sort"
+	if len(key) > 0 {
+		k = key[0]
 	}
+	raw := req.Get(k)
+	var sorts map[string]string
+	if raw != nil {
+		jsoniter.Unmarshal(raw, &sorts)
+		db = ApplySorts(db, sorts, "id desc")
+	}
+
+	return db
 }
 
-func UpsertOptUpdateColumns(cols ...string) UpsertOpt {
-	return func(on clause.OnConflict) clause.OnConflict {
-		on.DoUpdates = clause.AssignmentColumns(cols)
-		return on
+func ApplySorts(db *gorm.DB, sorts map[string]string, defSort ...string) *gorm.DB {
+
+	if len(defSort) > 0 && len(sorts) == 0 {
+		db = db.Order(defSort[0])
 	}
-}
 
-func WithUpsert(opts ...UpsertOpt) func(*gorm.DB) *gorm.DB {
-	return func(db *gorm.DB) *gorm.DB {
-		var on clause.OnConflict
-
-		if len(opts) == 0 {
-			on.DoNothing = true
-		}
-		for _, opt := range opts {
-			on = opt(on)
-		}
-
-		return db.Clauses(on)
+	for col, val := range sorts {
+		db = db.Order(fmt.Sprintf("%s %s", col, val))
 	}
+	return db
 }

@@ -29,3 +29,7 @@ type User struct {
 func (u User) UserIdentifier() authenticate.UserIdentifier {
 	return authenticate.Identifier(u.ID)
 }
+
+type AuthUser struct {
+	User
+}

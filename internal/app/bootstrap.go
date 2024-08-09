@@ -22,8 +22,8 @@ import (
 	"gorm.io/gorm"
 )
 
-//BootstrapApp bootstrap application, register services
-func BootstrapApp(app *framework.App) {
+// BootstrapApp bootstrap application, register services
+func BootstrapApp(app *framework.App, logDir string) {
 	database.Migrator = Migration
 
 	app.Register(database.NewService())
